@@ -117,19 +117,19 @@ int main() {
     
 
     // 6b. Create Inventory storeB with quantities {3,6,9} from string (1 mark)
-    // ???
+    Inventory storeB("369");
 
     // 6c. Create Inventory storeC by copying storeB (1 mark)
-    // ???
+    Inventory storeC = storeB;
 
     // 6d. Declare a pointer storeD, dynamically copy storeB (2 marks)
-    // ???
+    Inventory* storeD = &storeB;
 
     // 6e. Add 2 to storeD, result in storeE (2 marks)
-    // ???
+    Inventory* storeE = storeD + 2;
 
     // 6f. Multiply storeC by 2, result in storeF (2 marks)
-    // ???
+    
 
     // 6g. Add storeA and storeE, result in storeG (2 marks)
     // ???
