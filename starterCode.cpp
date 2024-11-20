@@ -99,10 +99,14 @@ public:
     }
 
     // 5b. Specify function in 5a. as a friend to class Inventory (1 marks)
-    // ???
+    friend void print(string , Inventory);
 };
 // 5a. A regular function that prints the details of an Inventory object (5 marks)
-// ???
+void print(string label , Inventory i){
+    cout << label << ":  ";
+     i.printQuantities();
+     cout << ", items :" << i.getItemCount() << ", " << "total : " << i.calculateQuantity();
+}
 
 int main() {
 
