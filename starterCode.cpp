@@ -29,6 +29,7 @@ public:
 
     // 1c. Constructor that initializes quantities from a string (6 marks)
     Inventory(string items) {
+        itemCount = items.size();
         for (int i = 0; i < items.size(); i++){
             quantities[i] = items[i]- '0' ;
         }
@@ -72,7 +73,7 @@ public:
     }
 
     // 4b. Overloaded addition operator for two Inventory objects (7 marks)
-    Inventory operator+(Inventory& right){
+    void operator+(Inventory& right){
         for(int i = 0; i < itemCount; i++){
             quantities[i] + right.quantities[i];
         }
@@ -110,9 +111,10 @@ void print(string label , Inventory i){
 
 int main() {
 
-    Inventory i("23");
     // 6a. Create Inventory storeA with quantities {5,10,15,20} (2 marks)
-    // ???
+    int array[4] = {5,10,15,20};
+    Inventory storeA(array , 4);
+    
 
     // 6b. Create Inventory storeB with quantities {3,6,9} from string (1 mark)
     // ???
