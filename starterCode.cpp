@@ -65,7 +65,7 @@ public:
     }  
     }
     // 4a. Overloaded multiplication operator (7 marks)
-    Inventory& operator*(int multiplier){
+    void operator*(int multiplier){
         for(int i = 0; i < itemCount; i++){
             quantities[i] * multiplier;
         }
@@ -79,7 +79,11 @@ public:
     }
 
     // 4c. Overloaded addition operator for Inventory and integer (7 marks)
-    // ???
+    void operator+(int added){
+        itemCount++;
+        quantities+=added;
+
+    }
 
     // 4d. Overloaded subscript operator (4 marks)
     // ???
