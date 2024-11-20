@@ -82,17 +82,21 @@ public:
     void operator+(int added){
         itemCount++;
         quantities+=added;
-
     }
 
     // 4d. Overloaded subscript operator (4 marks)
-    // ???
+    //apa?
 
     // 4e. Overloaded equality operator (8 marks)
-    // ???
+    // bool operator==(Inventory& right){
+    //     return ()
+    // }
+    //man what is this i don't even understand the question
 
     // 4f. Overloaded greater-than operator (5 marks)
-    // ???
+    bool operator>(Inventory & r){
+        return calculateQuantity() > r.calculateQuantity();
+    }
 
     // 5b. Specify function in 5a. as a friend to class Inventory (1 marks)
     // ???
