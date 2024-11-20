@@ -22,15 +22,15 @@ private:
 
 public:
     // 1a. Constructor that initializes itemCount and allocates memory for quantities (3 marks)
-    Inventory(int itemCount) : itemCount(itemCount) { quantities = new int[1]; } //you didn't spesify the size of the array
+    Inventory(int ic) : itemCount(ic) { quantities = new int[1]; } //you didn't spesify the size of the array
 
     // 1b. Constructor that initializes itemCount and quantities array (4 marks)
     Inventory(int* q , int i) : quantities(q) , itemCount(i) {}
 
     // 1c. Constructor that initializes quantities from a string (6 marks)
     Inventory(string items) {
-        for (const char& num : items){
-            cout << num - '0' ;
+        for (int i = 0; i < items.size(); i++){
+            quantities[i] = items[i]- '0' ;
         }
     }
 
