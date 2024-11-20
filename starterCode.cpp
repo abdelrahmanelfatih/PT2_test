@@ -66,16 +66,16 @@ public:
     }  
     }
     // 4a. Overloaded multiplication operator (7 marks)
-    void operator*(int multiplier){
+    Inventory operator*(int multiplier){
         for(int i = 0; i < itemCount; i++){
-            quantities[i] * multiplier;
+            return quantities[i] * multiplier;
         }
     }
 
     // 4b. Overloaded addition operator for two Inventory objects (7 marks)
-    void operator+(Inventory& right){
+    Inventory operator+(Inventory* right){
         for(int i = 0; i < itemCount; i++){
-            quantities[i] + right.quantities[i];
+            return quantities[i] + right->quantities[i];
         }
     }
 
@@ -129,22 +129,30 @@ int main() {
     Inventory* storeE = storeD + 2;
 
     // 6f. Multiply storeC by 2, result in storeF (2 marks)
-    
+    Inventory storeF = storeC * 2;
 
     // 6g. Add storeA and storeE, result in storeG (2 marks)
-    // ???
+    Inventory storeG = storeA + storeE; 
 
     // 6h. Print all inventories from 6a to 6g (4 marks)
-    // ???
+    // print("Store A: " , storeA);
+    // print("Store B: " , storeB);
+    // print("Store C: " , storeC);
+    // print("Store D: " , storeD);
+    // print("Store E: " , storeE);
+    // print("Store F: " , storeF);
+    // print("Store G: " , storeG);
+    
 
     // 6i. Check if storeA and storeB are equivalent (2 marks)
-    // ???
+    
 
     // 6j. Check if storeA is greater than storeE (2 marks)
-    // ???
+    //i give up
 
     // 6k. Properly delete dynamically created storeD (2 marks)
-    // ???
+    delete storeD;
+    delete storeE;
     system("pause");
     return 0;
 }
