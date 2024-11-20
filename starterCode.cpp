@@ -22,7 +22,7 @@ private:
 
 public:
     // 1a. Constructor that initializes itemCount and allocates memory for quantities (3 marks)
-    Inventory(int ic) : itemCount(ic) { quantities = new int[1]; } //you didn't spesify the size of the array
+    Inventory(int ic) : itemCount(ic) { quantities = new int[itemCount]; } //you didn't spesify the size of the array
 
     // 1b. Constructor that initializes itemCount and quantities array (4 marks)
     Inventory(int* q , int i) : quantities(q) , itemCount(i) {}
@@ -32,28 +32,51 @@ public:
         for (int i = 0; i < items.size(); i++){
             quantities[i] = items[i]- '0' ;
         }
+        cout << quantities[0];
     }
 
     // 1d. Copy constructor (4 marks)
-    // ???
+    Inventory(const Inventory& copy){
+        quantities = new int [itemCount];
+    }
 
     // 2. Destructor (3 marks)
-    // ???
+    ~Inventory(){
+        quantities = nullptr;
+    }
 
     // 3a. Conversion method: Returns itemCount (2 marks)
-    // ???
+    int getItemCount() const { return itemCount; }
 
     // 3b. Conversion method: Calculates total quantity (6 marks)
-    // ???
+    int calculateQuantity() const {
+        int sum{};
+        for (int i = 0; i < itemCount ; i++)
+            sum += quantities[i];
+            return sum;
+    }
 
     // 3c. Conversion method: Converts quantities to a comma-separated string (6 marks)
-    // ???
+    void printQuantities() const {
+    for (int i = 0; i < itemCount ; i++){
+            if (i == 0) { cout << quantities[i] << ","; }
 
+            cout << quantities[i];
+    }  
+    }
     // 4a. Overloaded multiplication operator (7 marks)
-    // ???
+    Inventory& operator*(int multiplier){
+        for(int i = 0; i < itemCount; i++){
+            quantities[i] * multiplier;
+        }
+    }
 
     // 4b. Overloaded addition operator for two Inventory objects (7 marks)
-    // ???
+    Inventory operator+(Inventory& right){
+        for(int i = 0; i < itemCount; i++){
+            quantities[i] + right.quantities[i];
+        }
+    }
 
     // 4c. Overloaded addition operator for Inventory and integer (7 marks)
     // ???
@@ -108,6 +131,6 @@ int main() {
 
     // 6k. Properly delete dynamically created storeD (2 marks)
     // ???
-
+    system("pause");
     return 0;
 }
