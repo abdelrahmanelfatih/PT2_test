@@ -142,7 +142,7 @@ int main() {
     // print("Store E: " , storeE);
     // print("Store F: " , storeF);
     // print("Store G: " , storeG);
-    
+    //mehehe
 
     // 6i. Check if storeA and storeB are equivalent (2 marks)
     
